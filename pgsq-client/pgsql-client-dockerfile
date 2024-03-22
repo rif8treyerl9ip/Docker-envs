@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+RUN apk --no-cache add postgresql-client
+
+ENV JQ_USER=%JQ_USER%
+ENV JQ_DB=%JQ_DB%
+
+ENTRYPOINT ["psql"]
+CMD ["-h", "host.docker.internal", "-p", "5432", "-U", "$JQ_USER", "-d", "$JQ_DB"]
