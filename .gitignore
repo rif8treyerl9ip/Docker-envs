@@ -1,1 +1,4 @@
 loadmap.md
+
+/Docker-envs/pgsql-client-tools/DDL/dbml/*
+!/Docker-envs/pgsql-client-tools/DDL/dbml/.gitkeep
