@@ -1,6 +1,5 @@
--- SQL schema for an inventory database
 CREATE TABLE customers (
-   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   id SERIAL PRIMARY KEY,
    cust_name VARCHAR(100) NOT NULL,
    email VARCHAR(100) NOT NULL,
    phone VARCHAR(20),
@@ -8,7 +7,7 @@ CREATE TABLE customers (
 );
 
 CREATE TABLE items (
-   item_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   item_id SERIAL PRIMARY KEY,
    item_name VARCHAR(100) NOT NULL,
    item_desc TEXT,
    item_price DECIMAL(10,2) NOT NULL,
@@ -16,7 +15,7 @@ CREATE TABLE items (
 );
 
 CREATE TABLE purchases (
-   purchase_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   purchase_id SERIAL PRIMARY KEY,
    cust_id INT NOT NULL,
    purchase_date DATE NOT NULL,
    total_amount DECIMAL(10,2) NOT NULL,
@@ -24,7 +23,7 @@ CREATE TABLE purchases (
 );
 
 CREATE TABLE purchase_details (
-   detail_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   detail_id SERIAL PRIMARY KEY,
    purchase_id INT NOT NULL,
    item_id INT NOT NULL,
    quantity INT NOT NULL,
