@@ -3,6 +3,7 @@
 ## Key Features
 
 - postgresql-client: Command-line access to PostgreSQL servers.
+- [@dbml/cli](https://www.npmjs.com/package/@dbml/cli): A CLI tool specifically designed for converting between DBML files and SQL scripts, facilitating database schema management.
 - [psqldef](https://github.com/sqldef/sqldef): A tool for managing database schemas.
 
 ## How to Use
