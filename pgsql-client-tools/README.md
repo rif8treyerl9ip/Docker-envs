@@ -2,8 +2,8 @@
 
 ## Key Features
 
-- **postgresql-client**: Command-line access to PostgreSQL servers.
-- **psqldef**: A tool for managing database schemas.
+- postgresql-client: Command-line access to PostgreSQL servers.
+- [psqldef](https://github.com/sqldef/sqldef): A tool for managing database schemas.
 
 ## How to Use
 
