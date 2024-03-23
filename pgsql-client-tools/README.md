@@ -16,6 +16,6 @@ psqldef --version
 psql -h host.docker.internal -p 5432 -U $JQ_USER -d $JQ_DB
 
 psqldef --host=host.docker.internal --port=5432 --user=$JQ_USER --password=<passwd> $JQ_DB --export
-psqldef --host=host.docker.internal --port=5432 --user=$JQ_USER --password=<passwd> $JQ_DB --dry-run < pgsql-client-tools/DDL/posts.sql
-psqldef --host=host.docker.internal --port=5432 --user=$JQ_USER --password=<passwd> $JQ_DB --dry-run < pgsql-client-tools/DDL/posts_new.sql
+psqldef --host=host.docker.internal --port=5432 --user=$JQ_USER --password=<passwd> $JQ_DB --dry-run < pgsql-client-tools/DDL/query1.sql
+psqldef --host=host.docker.internal --port=5432 --user=$JQ_USER --password=<passwd> $JQ_DB --dry-run < pgsql-client-tools/DDL/query2.sql
 ```
