@@ -12,6 +12,9 @@ RUN curl -LO https://github.com/sqldef/sqldef/releases/download/v0.16.15/psqldef
 RUN apk --no-cache add nodejs npm
 RUN npm install -g @dbml/cli
 
+# dbdocs
+RUN npm install -g dbdocs
+
 WORKDIR /workspace
 
 
