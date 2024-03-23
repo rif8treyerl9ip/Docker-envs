@@ -8,9 +8,7 @@
 ## How to Use
 
 ```bash
-./build_run.bat
-```
-
+pgsql-client-tools/Docker/build_run.bat
 ```
 psqldef --version
 psql -h host.docker.internal -p 5432 -U $JQ_USER -d $JQ_DB
