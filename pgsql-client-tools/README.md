@@ -11,7 +11,7 @@
 ### 1. Docker Build & Run
 
 ```bash
-pgsql-client-tools/Docker/build_run.bat
+pgsql-client-tools\Docker\build_run.bat
 ```
 
 ### 2. Creating DDL
@@ -21,11 +21,16 @@ Developers create DDL files in the `pgsql-client-tools\DDL\sql` directory.
 To convert the created DDL files to DBML format, run the following script:
 
 ```sh
-pgsql-client-tools/DDL/utils/convert_sql_to_dbml.sh
+pgsql-client-tools/DDL/utils/summarize_sql.sh
+sql2dbml pgsql-client-tools/DDL/sql/summarized.sql -o pgsql-client-tools/DDL/dbml/summarized.dbml
 ```
-At this stage, before proceeding to step 3, you need to consolidate the contents of the generated dbml files into a single dbml file.
 
-### 4. Creating ER using dbdocs
+### 4. Applying Changes with psqldef
+```
+pgsql-client-tools/DDL/utils/execute_psqldef.sh
+```
+
+### 5. Creating ER using dbdocs
 ```
 dbdocs build pgsql-client-tools/DDL/dbml/summarized.dbml
 ```
