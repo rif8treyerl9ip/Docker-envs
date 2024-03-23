@@ -1,2 +1,2 @@
-*Dockerfile*.template        linguist-language=Dockerfile
-*dockerfile*.template        linguist-language=Dockerfile
+*Dockerfile* linguist-language=Dockerfile
+*dockerfile* linguist-language=Dockerfile
