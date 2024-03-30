@@ -1,4 +1,5 @@
 dags/*
+!dags/hello_world_dag.py
 config/*
 logs/*
 plugins/*
