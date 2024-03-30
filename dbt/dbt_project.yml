@@ -1,0 +1,19 @@
+name: 'jquants_project'  # dbtプロジェクト自体の名前
+version: '1.0.0'
+config-version: 2
+
+profile: 'jquants'  # データベース接続設定の名前
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+models:
+  jquants_project:
+    example_model:
+      materialized: table
+    another_model:
+      materialized: view
+

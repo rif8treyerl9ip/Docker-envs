@@ -1,0 +1,34 @@
+version: 2
+
+# example
+sources:
+ - name: demo_source
+   database: jquants_db
+   tables:
+     - name: stock_information
+       columns:
+         - name: Date
+           type: DATE
+         - name: Code  
+           type: VARCHAR(10)
+         - name: CompanyName
+           type: VARCHAR(255)  
+         - name: CompanyNameEnglish
+           type: VARCHAR(255)
+         - name: Sector17Code
+           type: VARCHAR(10)
+         - name: Sector17CodeName 
+           type: VARCHAR(100)
+         - name: Sector33Code
+           type: VARCHAR(10)
+         - name: Sector33CodeName
+           type: VARCHAR(100)
+         - name: ScaleCategory
+           type: VARCHAR(100)
+         - name: MarketCode
+           type: VARCHAR(10)
+         - name: MarketCodeName
+           type: VARCHAR(100)
+       primary_key:
+         - Date
+         - Code

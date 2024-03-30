@@ -1,0 +1,10 @@
+.user.yml
+
+analysis/*
+logs/*
+macros/*
+seeds/*
+target/*
+tests/*
+
+!.gitkeep
