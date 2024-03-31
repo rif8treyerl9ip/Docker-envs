@@ -1,0 +1,15 @@
+FROM alpine:3.14
+
+RUN apk add --no-cache python3 py3-pip python3-dev build-base libffi-dev git sudo
+
+# NOTE: Use the NOPASSWD option to execute sudo without a password here.
+RUN adduser -D -u 2000 dbt && \
+    echo "dbt ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/dbt
+
+RUN python3 -m venv /opt/venv
+
+ENV PATH="/opt/venv/bin:$PATH"
+
+RUN pip install dbt-postgres
+
+WORKDIR /workspace

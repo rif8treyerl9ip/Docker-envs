@@ -1,0 +1,253 @@
+version: 2
+
+# example
+sources:
+ - name: stock_information
+   database: jquants
+   tables:
+     - name: stock_information
+       tags: ['default']
+       columns:
+         - name: Date
+           type: DATE
+         - name: Code
+           type: VARCHAR(10)
+         - name: CompanyName
+           type: VARCHAR(255)
+         - name: CompanyNameEnglish
+           type: VARCHAR(255)
+         - name: Sector17Code
+           type: VARCHAR(10)
+         - name: Sector17CodeName 
+           type: VARCHAR(100)
+         - name: Sector33Code
+           type: VARCHAR(10)
+         - name: Sector33CodeName
+           type: VARCHAR(100)
+         - name: ScaleCategory
+           type: VARCHAR(100)
+         - name: MarketCode
+           type: VARCHAR(10)
+         - name: MarketCodeName
+           type: VARCHAR(100)
+       primary_key:
+         - Date
+         - Code
+ - name: fins_statements
+   database: jquants
+   tables:
+     - name: fins_statements
+       tags: ['default']
+       columns:
+        - name: DisclosedDate
+          type: VARCHAR(25)
+        - name: DisclosedTime
+          type: VARCHAR(25)
+        - name: LocalCode
+          type: VARCHAR(25)
+        - name: DisclosureNumber
+          type: VARCHAR(25)
+        - name: TypeOfDocument VARCHAR(50),
+        - name: TypeOfCurrentPeriod
+          type: VARCHAR(25)
+        - name: CurrentPeriodStartDate
+          type: VARCHAR(25)
+        - name: CurrentPeriodEndDate
+          type: VARCHAR(25)
+        - name: CurrentFiscalYearStartDate
+          type: VARCHAR(25)
+        - name: CurrentFiscalYearEndDate
+          type: VARCHAR(25)
+        - name: NextFiscalYearStartDate
+          type: VARCHAR(25)
+        - name: NextFiscalYearEndDate
+          type: VARCHAR(25)
+        - name: NetSales
+          type: VARCHAR(25)
+        - name: OperatingProfit
+          type: VARCHAR(25)
+        - name: OrdinaryProfit
+          type: VARCHAR(25)
+        - name: Profit
+          type: VARCHAR(25)
+        - name: EarningsPerShare
+          type: VARCHAR(25)
+        - name: DilutedEarningsPerShare
+          type: VARCHAR(25)
+        - name: TotalAssets
+          type: VARCHAR(25)
+        - name: Equity
+          type: VARCHAR(25)
+        - name: EquityToAssetRatio
+          type: VARCHAR(25)
+        - name: BookValuePerShare
+          type: VARCHAR(25)
+        - name: CashFlowsFromOperatingActivities
+          type: VARCHAR(25)
+        - name: CashFlowsFromInvestingActivities
+          type: VARCHAR(25)
+        - name: CashFlowsFromFinancingActivities
+          type: VARCHAR(25)
+        - name: CashAndEquivalents
+          type: VARCHAR(25)
+        - name: ResultDividendPerShare1stQuarter
+          type: VARCHAR(25)
+        - name: ResultDividendPerShare2ndQuarter
+          type: VARCHAR(25)
+        - name: ResultDividendPerShare3rdQuarter
+          type: VARCHAR(25)
+        - name: ResultDividendPerShareFiscalYearEnd
+          type: VARCHAR(25)
+        - name: ResultDividendPerShareAnnual
+          type: VARCHAR(25)
+        - name: DistributionsPerUnit_REIT
+          type: VARCHAR(25)
+        - name: ResultTotalDividendPaidAnnual
+          type: VARCHAR(25)
+        - name: ResultPayoutRatioAnnual
+          type: VARCHAR(25)
+        - name: ForecastDividendPerShare1stQuarter
+          type: VARCHAR(25)
+        - name: ForecastDividendPerShare2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastDividendPerShare3rdQuarter
+          type: VARCHAR(25)
+        - name: ForecastDividendPerShareFiscalYearEnd
+          type: VARCHAR(25)
+        - name: ForecastDividendPerShareAnnual
+          type: VARCHAR(25)
+        - name: ForecastDistributionsPerUnit_REIT
+          type: VARCHAR(25)
+        - name: ForecastTotalDividendPaidAnnual
+          type: VARCHAR(25)
+        - name: ForecastPayoutRatioAnnual
+          type: VARCHAR(25)
+        - name: NextYearForecastDividendPerShare1stQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastDividendPerShare2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastDividendPerShare3rdQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastDividendPerShareFiscalYearEnd
+          type: VARCHAR(25)
+        - name: NextYearForecastDividendPerShareAnnual
+          type: VARCHAR(25)
+        - name: NextYearForecastDistributionsPerUnit_REIT
+          type: VARCHAR(25)
+        - name: NextYearForecastPayoutRatioAnnual
+          type: VARCHAR(25)
+        - name: ForecastNetSales2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastOperatingProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastOrdinaryProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastEarningsPerShare2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastNetSales2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastOperatingProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastOrdinaryProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastEarningsPerShare2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastNetSales
+          type: VARCHAR(25)
+        - name: ForecastOperatingProfit
+          type: VARCHAR(25)
+        - name: ForecastOrdinaryProfit
+          type: VARCHAR(25)
+        - name: ForecastProfit
+          type: VARCHAR(25)
+        - name: ForecastEarningsPerShare
+          type: VARCHAR(25)
+        - name: NextYearForecastNetSales
+          type: VARCHAR(25)
+        - name: NextYearForecastOperatingProfit
+          type: VARCHAR(25)
+        - name: NextYearForecastOrdinaryProfit
+          type: VARCHAR(25)
+        - name: NextYearForecastProfit
+          type: VARCHAR(25)
+        - name: NextYearForecastEarningsPerShare
+          type: VARCHAR(25)
+        - name: MaterialChangesInSubsidiaries
+          type: VARCHAR(25)
+        - name: ChangesBasedOnRevisionsOfAccountingStandard
+          type: VARCHAR(25)
+        - name: ChangesOtherThanOnesBasedOnRevisionsOfAccountingStandard
+          type: VARCHAR(25)
+        - name: ChangesInAccountingEstimates
+          type: VARCHAR(25)
+        - name: RetrospectiveRestatement
+          type: VARCHAR(25)
+        - name: NumberOfIssuedAndOutstandingSharesAtTheEndOfFiscalYearIncludingTreasuryStock
+          type: VARCHAR(25)
+        - name: NumberOfTreasuryStockAtTheEndOfFiscalYear
+          type: VARCHAR(25)
+        - name: AverageNumberOfShares
+          type: VARCHAR(25)
+        - name: NonConsolidatedNetSales
+          type: VARCHAR(25)
+        - name: NonConsolidatedOperatingProfit
+          type: VARCHAR(25)
+        - name: NonConsolidatedOrdinaryProfit
+          type: VARCHAR(25)
+        - name: NonConsolidatedProfit
+          type: VARCHAR(25)
+        - name: NonConsolidatedEarningsPerShare
+          type: VARCHAR(25)
+        - name: NonConsolidatedTotalAssets
+          type: VARCHAR(25)
+        - name: NonConsolidatedEquity
+          type: VARCHAR(25)
+        - name: NonConsolidatedEquityToAssetRatio
+          type: VARCHAR(25)
+        - name: NonConsolidatedBookValuePerShare
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedNetSales2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedOperatingProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedOrdinaryProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedEarningsPerShare2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedNetSales2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedOperatingProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedOrdinaryProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedProfit2ndQuarter
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedEarningsPerShare2ndQuarter
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedNetSales
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedOperatingProfit
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedOrdinaryProfit
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedProfit
+          type: VARCHAR(25)
+        - name: ForecastNonConsolidatedEarningsPerShare
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedNetSales
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedOperatingProfit
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedOrdinaryProfit
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedProfit
+          type: VARCHAR(25)
+        - name: NextYearForecastNonConsolidatedEarningsPerShare
+          type: VARCHAR(25)
+        - name: PRIMARY KEY (DisclosedDate, LocalCode, DisclosureNumber)
