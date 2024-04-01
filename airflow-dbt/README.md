@@ -23,6 +23,8 @@ Before starting the project, ensure Docker and Docker Compose are installed. If 
    set DB_PASS=your_database_password
    set DB_NAME=your_database_name
    ```
+   Before proceeding with the Docker Compose setup, ensure you have a database and necessary tables set up and ready. This setup requires you to manually create a database that matches the name specified in DB_NAME, and tables that the dbt models will target.  This guide does not cover the creation of the database and tables, so please prepare these resources in advance.
+
 
 3. **Use Docker Compose to build images and start containers:**
 
