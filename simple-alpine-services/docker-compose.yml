@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  alpine1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: alpine_1
+
+  alpine2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: alpine_2
+
+  alpine3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: alpine_3
