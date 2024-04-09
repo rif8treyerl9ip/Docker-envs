@@ -1,0 +1,4 @@
+FROM alpine:latest
+
+# iputils（pingコマンドを含む）をインストール
+RUN apk add --no-cache vim nano
