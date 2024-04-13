@@ -17,8 +17,3 @@
 
   cd mmdetection3d
   python demo/pcd_demo.py demo/data/kitti/000008.bin configs/second/second_hv_secfpn_8xb6-80e_kitti-3d-car.py checkpoints/hv_second_secfpn_6x8_80e_kitti-3d-car_20200620_230238-393f000c.pth --show
-
-# reference
-  https://hub.docker.com/r/pytorch/pytorch/tags?page=&page_size=&ordering=&name=
-  https://qiita.com/fam_taro/items/7f028dfeae2a79a10fe1#51-dockerfile
-  https://qiita.com/sister_DB/items/f059b4544d5675079b11
