@@ -1,0 +1,5 @@
+cd mmlab
+
+docker build -t mmlab_test -f docker/Dockerfile ./docker
+
+docker run --gpus all -e DISPLAY=host.docker.internal:0 -v .:/workspace --name mmlab_test -it --rm mmlab_test /bin/bash

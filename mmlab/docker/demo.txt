@@ -1,0 +1,24 @@
+# チェックポイントのダウンロード
+  # wget -P ./checkpoints/ https://download.openmmlab.com/mmdetection3d/v0.1.0_models/second/hv_second_secfpn_6x8_80e_kitti-3d-car/hv_second_secfpn_6x8_80e_kitti-3d-car_20200620_230238-393f000c.pth
+  # wget -P ./checkpoints/ https://download.openmmlab.com/mmdetection3d/v1.0.0_models/centerpoint/centerpoint_01voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus/centerpoint_01voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus_20220810_030004-9061688e.pth
+
+# リポジトリのクローン
+
+  git clone https://github.com/open-mmlab/mmdetection.git  # mmdetection
+  git clone https://github.com/open-mmlab/mmcv.git  # mmcv
+  git clone https://github.com/open-mmlab/mmdetection3d.git  # mmdetection3d
+
+
+# デモの実行
+  # (hostPC) VCXSRVをインストール、-acを設定
+
+  # プログラムが実行される前に特定の共有ライブラリを先読みしてメモリにロードするとエラーを回避できる
+  export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
+  cd mmdetection3d
+  python demo/pcd_demo.py demo/data/kitti/000008.bin configs/second/second_hv_secfpn_8xb6-80e_kitti-3d-car.py checkpoints/hv_second_secfpn_6x8_80e_kitti-3d-car_20200620_230238-393f000c.pth --show
+
+# reference
+  https://hub.docker.com/r/pytorch/pytorch/tags?page=&page_size=&ordering=&name=
+  https://qiita.com/fam_taro/items/7f028dfeae2a79a10fe1#51-dockerfile
+  https://qiita.com/sister_DB/items/f059b4544d5675079b11

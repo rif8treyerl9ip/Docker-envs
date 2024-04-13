@@ -1,0 +1,9 @@
+data
+test
+
+mmcv
+mmdetection
+mmdetection3d
+
+*.pth
+*.tgz
