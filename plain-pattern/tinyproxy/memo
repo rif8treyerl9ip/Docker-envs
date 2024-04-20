@@ -1,0 +1,10 @@
+※tinyproxy.confはLF（ラインフィード）でないとtinyproxyが解釈できなくてコンテナが停止する
+
+docker build -t tinyproxy .
+
+docker run -it --rm -p 8888:8888 tinyproxy
+
+docker exec -it blissful_heisenberg cat /var/log/tinyproxy/tinyproxy.log
+
+# tinyproxyを経由してGoogleにアクセス
+curl -x http://localhost:8888 https://www.google.com
