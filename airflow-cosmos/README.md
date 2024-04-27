@@ -2,15 +2,17 @@
 
 -------------------
 
-以下の手順に従って、AirflowとDBTを含む環境をセットアップできる:
+## Setting up an Environment with Airflow and DBT
 
-1. リポジトリのルートディレクトリに移動
+Follow these steps to set up an environment that includes Airflow and DBT:
+
+### 1. Navigate to the Repository Root Directory
 
 ```bash
 cd airflow-cosmos
 ```
 
-2. 環境変数を含む`.env`ファイルを作成
+### 2. Create a `.env` File Containing Environment Variables
 
 ```bash
 echo DB_USER=%JQU1%>docker/.env
@@ -18,13 +20,13 @@ echo DB_PASS=%JQP%>>docker/.env
 echo DB_NAME=%JQD%>>docker/.env
 ```
 
-3. Dockerイメージをビルド
+### 3. Build the Docker Image
 
 ```bash
 docker build -f ./docker/Dockerfile -t airflow-dbt .
 ```
 
-4. Dockerコンテナを実行。以下のコマンドはWindowsの場合の例です。LinuxやmacOSでは`\`を`^`に置き換える
+### 4. Run the Docker Container
 
 ```bash
 docker run -it --rm ^
@@ -37,34 +39,34 @@ docker run -it --rm ^
     airflow-dbt
 ```
 
-## コンテナ作成時の初期設定
+## Initial Setup When Creating the Container
 
-コンテナ作成時、初回のみ以下のコマンドを実行し、Airflowを初期化
+Run the following command initially when creating the container to initialize Airflow:
 
 ```bash
 source airflow/dbt_venv/bin/activate && source ./docker/init.sh
 ```
 
-## 手動設定
+## Manual Configuration After Container Creation
 
-コンテナ作成後、以下の手動設定が必要
+After creating the container, perform the following manual configurations:
 
-1. ブラウザで `http://127.0.0.1:8000` にアクセスし、Airflow UIを開く。
+### 1. Open a browser and navigate to `http://127.0.0.1:8000` to access the Airflow UI.
 
-2. Airflow UIの「Admin」メニューから「Connections」を選択
+### 2. From the Airflow UI, select "Admin" from the menu and then choose "Connections".
 
-3. 「Create」ボタンをクリックし、新しいコネクションを作成
+### 3. Click the "Create" button to create a new connection.
 
-4. 以下の項目を設定します：
+### 4. Configure the connection with the following details:
    - `Conn Id`: `airflow_db`
    - `Conn Type`: `Postgres`
-   - `Host`: データベースのホスト名(ex. host.docker.internal)
-   - `Port`: データベースのポート番号
-   - `Password`: データベースのパスワード
-   - `Database`: データベース名
-   - `Login`: データベースのユーザー名
+   - `Host`: Database hostname (e.g., host.docker.internal)
+   - `Port`: Database port number
+   - `Password`: Database password
+   - `Database`: Database name
+   - `Login`: Database username
 
-以下のコマンドを実行することで、Airflow WebserverとSchedulerを実行
+Run the following command to execute the Airflow Webserver and Scheduler:
 
 ```bash
 source airflow/dbt_venv/bin/activate && airflow webserver --port 8080 & airflow scheduler
