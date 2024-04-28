@@ -18,6 +18,10 @@ cd airflow-cosmos
 echo DB_USER=%JQU1%>docker/.env
 echo DB_PASS=%JQP%>>docker/.env
 echo DB_NAME=%JQD%>>docker/.env
+echo MAIL_ADDRESS=%MAIL_ADDRESS%>>docker/.env
+echo JQP=%JQP%>>docker/.env
+echo JQUANTS_PASSWORD=%JQUANTS_PASSWORD%>>docker/.env
+echo SLACK_WEBHOOK=%SLACK_WEBHOOK%>>docker/.env
 ```
 
 ### 3. Build the Docker Image
