@@ -47,27 +47,24 @@ Run the following command initially when creating the container to initialize Ai
 source airflow/dbt_venv/bin/activate && source ./docker/init.sh
 ```
 
-## Manual Configuration After Container Creation
-
-After creating the container, perform the following manual configurations:
-
-### 1. Open a browser and navigate to `http://127.0.0.1:8000` to access the Airflow UI.
-
-### 2. From the Airflow UI, select "Admin" from the menu and then choose "Connections".
-
-### 3. Click the "Create" button to create a new connection.
-
-### 4. Configure the connection with the following details:
-   - `Conn Id`: `airflow_db`
-   - `Conn Type`: `Postgres`
-   - `Host`: Database hostname (e.g., host.docker.internal)
-   - `Port`: Database port number
-   - `Password`: Database password
-   - `Database`: Database name
-   - `Login`: Database username
-
 Run the following command to execute the Airflow Webserver and Scheduler:
 
 ```bash
 source airflow/dbt_venv/bin/activate && airflow webserver --port 8080 & airflow scheduler
+```
+
+## CLEANUP
+
+When you're done working with the Airflow and DBT environment, follow these commands to clean up:
+
+```bash
+
+# terminate the Airflow-related processes
+chmod +x docker/kill_airflow_processes.sh
+ps aux && ./docker/kill_airflow_processes.sh
+
+# Remove the Airflow logs
+rm -rf /usr/local/airflow/logs/*
+
+docker stop airflow-dbt
 ```
