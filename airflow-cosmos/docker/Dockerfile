@@ -19,16 +19,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     sudo \
     vim \
+    jq \
+    postgresql-client \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN /bin/bash -c "python3 -m venv /opt/dbt_venv && \
     source /opt/dbt_venv/bin/activate && \
-    pip install apache-airflow \
+    pip install pandas psycopg2 requests \
+    apache-airflow \
     astronomer-cosmos \
     dbt-core \
     dbt-postgres \
     apache-airflow-providers-postgres \
+    apache-airflow-providers-common-sql>=1.3.1 \
+    apache-airflow-providers-slack \
     && deactivate"
 
 ENV AIRFLOW_HOME=/usr/local/airflow \
