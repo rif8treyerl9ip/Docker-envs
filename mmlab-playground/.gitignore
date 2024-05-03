@@ -1,18 +1,18 @@
 data
-test
 
-mmcv
-mmdeploy
-mmdetection
-mmdetection3d
-mmengine
-mmeval
-mmsegmentation
+/mmcv
+/mmdeploy
+/mmdetection
+/mmdetection3d
+/mmengine
+/mmeval
+/mmsegmentation
 all_cfg
 
 *.pth
 *.tgz
 *.pth
 *.jpg
+*.mp4
 
 raf*
