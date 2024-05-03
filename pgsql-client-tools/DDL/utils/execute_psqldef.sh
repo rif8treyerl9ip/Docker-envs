@@ -7,5 +7,5 @@ export PSQLDEF_PASSWORD
 
 TARGET_DIR="pgsql-client-tools/DDL/sql"
 
-psqldef --host=host.docker.internal --port=5432 --user="$JQ_USER" --password="$PSQLDEF_PASSWORD" "$JQ_DB" --dry-run < pgsql-client-tools/DDL/sql/summarized.sql
+psqldef --host=host.docker.internal --port=5432 --user="$JQ_U1" --password="$JQP" "$JQD" --dry-run < pgsql-client-tools/DDL/sql/summarized.sql
 
