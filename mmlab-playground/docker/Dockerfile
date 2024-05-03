@@ -39,11 +39,11 @@ RUN pip install mmengine \
     && pip install mmcv==2.0.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html \
     && pip install mmdet \
     && pip install mmsegmentation \
-    && pip install mmdet3d
+    && pip install mmdet3d \
+    && pip install mmdeploy
 
 ENV LANG C.UTF-8
 ENV LANGUAGE en_US
 ENV DISPLAY host.docker.internal:0.0
 
 WORKDIR /workspace
-
