@@ -7,12 +7,15 @@ data
 /mmengine
 /mmeval
 /mmsegmentation
-all_cfg
+
+test/all_cfg/*
+!test/all_cfg/.gitkeep
 
 *.pth
 *.tgz
 *.pth
 *.jpg
 *.mp4
+*.png
 
 raf*
