@@ -36,11 +36,13 @@ RUN pip install --upgrade pip \
 ENV MMCV_WITH_OPS=1
 
 RUN pip install mmengine \
-    && pip install mmcv==2.0.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html \
-    && pip install mmdet \
-    && pip install mmsegmentation \
-    && pip install mmdet3d \
-    && pip install mmdeploy
+&& pip install mmcv==2.0.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html \
+&& pip install mmdet \
+&& pip install mmsegmentation \
+&& pip install mmdet3d \
+&& pip install mmdeploy
+
+RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 ENV LANG C.UTF-8
 ENV LANGUAGE en_US

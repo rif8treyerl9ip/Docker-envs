@@ -2,5 +2,42 @@ cd mmlab-playground
 
 docker build -t mmlab_test -f docker/Dockerfile ./docker
 
-docker run --gpus all -v .:/workspace --name mmlab_test -it --rm mmlab_test /bin/bash
-docker run --gpus all -e DISPLAY=host.docker.internal:0 -v .:/workspace --name mmlab_test -it --rm mmlab_test /bin/bash
+# Dドライブのcocoを使用
+docker run --gpus all ^
+    -v .:/workspace ^
+    -v D:/ML_data/:/workspace/ML_data ^
+    --name mmlab_test ^
+    --shm-size=20gb -it ^
+    --rm mmlab_test /bin/bash
+
+# mim
+    mim search mmdet --model "yolov3"
+    mim download mmdet --config yolov3_d53_320_273e_coco --dest .
+
+    mim search mmdet --model  "BoxInst"
+    mim download mmdet --config boxinst_r50_fpn_ms-90k_coco --dest .
+
+    mim search mmsegmentation --model  "FCN"
+    mim download mmsegmentation --config fcn_r18-d8_4xb2-80k_cityscapes-512x1024 --dest .
+
+    mim search mmsegmentation --model  "pointrend"
+    mim download mmsegmentation --config pointrend_r50_4xb2-80k_cityscapes-512x1024 --dest .
+
+
+# linux
+    # df -h /dev/shm
+
+    ls /opt/conda/lib/python3.10/site-packages
+
+# patch
+    cp /opt/conda/lib/python3.10/site-packages/mmdet/evaluation/metrics/coco_metric.py  ./
+    cp coco_metric.py /opt/conda/lib/python3.10/site-packages/mmdet/evaluation/metrics/coco_metric.py
+    vim /opt/conda/lib/python3.10/site-packages/mmdet/evaluation/metrics/coco_metric.py
+
+
+# docs
+    # データセットの枚数指定
+    https://mmengine.readthedocs.io/en/latest/common_usage/debug_tricks.html
+
+
+# docker run --gpus all -e DISPLAY=host.docker.internal:0 -v .:/workspace --name mmlab_test -it --rm mmlab_test /bin/bash
