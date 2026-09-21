@@ -9,3 +9,8 @@ dbml-error.log
 *summarized*
 
 procedure.txt
+
+# Local environment files (may hold credentials such as JQU1 / JQP)
+.env
+.env.*
+!.env.example
